@@ -3,7 +3,7 @@ from rest_framework.serializers import ValidationError
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from project_name.api.auth.serializers import LoginSerializer
+from project_name.api.v1.auth.serializers import LoginSerializer
 
 User = get_user_model()
 
