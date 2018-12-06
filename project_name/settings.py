@@ -19,6 +19,7 @@ from django.utils.translation import ugettext_lazy as _
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+APPEND_SLASH = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -181,10 +182,10 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.JSONParser',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'project_name.api.auth.TokenAuthenticate',
+        'project_name.api.v1.auth.TokenAuthenticate',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'project_name.api.auth.IsUserAuthenticated',
+        'project_name.api.v1.auth.IsUserAuthenticated',
     ),
     'NON_FIELD_ERRORS_KEY': '__all__',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -193,3 +194,5 @@ REST_FRAMEWORK = {
 
 # 30 days
 EXPIRES_IN = 60*60*24*30
+
+CORS_ORIGIN_ALLOW_ALL = True
