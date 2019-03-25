@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 from decouple import Csv
 from decouple import config
+from corsheaders.defaults import default_headers
 from dj_database_url import parse as dburl
 from django.utils.translation import ugettext_lazy as _
 
@@ -67,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'auditlog.middleware.AuditlogMiddleware',
 ]
 
 ROOT_URLCONF = 'project_name.urls'
@@ -198,3 +200,5 @@ REST_FRAMEWORK = {
 EXPIRES_IN = 60*60*24*30
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_HEADERS = default_headers + []
