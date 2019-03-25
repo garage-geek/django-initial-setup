@@ -201,4 +201,4 @@ EXPIRES_IN = 60*60*24*30
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ALLOW_HEADERS = default_headers + []
+CORS_ALLOW_HEADERS = default_headers + ()
