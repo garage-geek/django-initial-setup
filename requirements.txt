@@ -22,7 +22,7 @@ itsdangerous
 django-cors-headers
 
 # Auditlog
--e git+https://github.com/cosmunsoftwares/django-auditlog#egg=django-auditlog
+git+https://github.com/cosmunsoftwares/django-auditlog.git
 
 # Django Tests
 
