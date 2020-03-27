@@ -48,7 +48,6 @@ INSTALLED_APPS = [
 ]
 
 EXTRA_APPS = [
-    'project_name.core.apps.AuditlogCustomConfig',
     'test_without_migrations',
     'widget_tweaks',
     'django_extensions',
@@ -68,7 +67,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'auditlog.middleware.AuditlogMiddleware',
 ]
 
 ROOT_URLCONF = 'project_name.urls'
@@ -124,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'pt-BR'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_Paulo'
 
@@ -139,7 +137,7 @@ LOCALE_PATHS = [
 ]
 
 LANGUAGES = [
-    ('pt_BR', _('Brazilian Portuguese')),
+    ('pt-br', _('Brazilian Portuguese')),
 ]
 
 # Static files (CSS, JavaScript, Images)

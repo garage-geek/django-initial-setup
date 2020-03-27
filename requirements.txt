@@ -14,8 +14,6 @@ boto3
 requests
 pytz
 
-#### Auditlog ####
-django-auditlog
 
 #### Django Tests ####
 django-test-without-migrations
