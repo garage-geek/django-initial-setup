@@ -1,19 +1,14 @@
-# Como usar
-
-curl -L http://bit.ly/cosmunsoftwares-django-boilerplate-api | bash -s <project_name>
-
-
 # <README.md>
 
 ## Como desenvolver?
 
 1. Clone o repositório.
-2. Crie um virtualenv com Python 3.6
-3. Ative o virtualenv.
-4. Instale as dependências.
-5. Configure a instância com o .env
-6. Execute os testes.
-6. Execute o runserver.
+1. Crie um virtualenv com Python 3.6
+1. Ative o virtualenv.
+1. Instale as dependências.
+1. Configure a instância com o .env
+1. Execute os testes.
+1. Execute o runserver.
 
 ```console
 git <git url>
@@ -33,14 +28,14 @@ flake8 --config=.flake8
 ```
 
 
-## Como fazer o deploy?
+## Como fazer o deploy no heroku?
 
 1. Crie uma instância no heroku.
-2. Envie as configurações para o heroku.
-3. Define um SECRET_KEY segura para instância.
-4. Defina DEBUG=True
-5. Configure o serviço de email.
-6. Envie o código para o heroku.
+1. Envie as configurações para o heroku.
+1. Define um SECRET_KEY segura para instância.
+1. Defina DEBUG=True
+1. Configure o serviço de email.
+1. Envie o código para o heroku.
 
 ```console
 heroku create minhainstancia

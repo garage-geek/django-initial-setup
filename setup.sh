@@ -36,7 +36,7 @@ then
     echo -e "\e[32m###############################################################################################\e[0m"
     echo ""
 
-    django-admin startproject --template https://github.com/cosmunsoftwares/django-boilerplate-api/archive/master.zip $project_name .
+    django-admin startproject --template https://github.com/garage-gek/django-initial-setup/archive/master.zip $project_name .
 
     find ./ -type f -exec sed -i s/project_name/$project_name/g {} \;
 

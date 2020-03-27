@@ -167,14 +167,14 @@ if DEFAULT_FILE_STORAGE == 'django.core.files.storage.FileSystemStorage':
 
 # Email configuration
 
-EMAIL_BACKEND = config('EMAIL_BACKEND')
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', cast=int)
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
-SERVER_EMAIL = config('SERVER_EMAIL')
+EMAIL_BACKEND = config('EMAIL_BACKEND', default='')
+EMAIL_HOST = config('EMAIL_HOST', default='')
+EMAIL_PORT = config('EMAIL_PORT', cast=int, default=25)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool, default='')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='')
+SERVER_EMAIL = config('SERVER_EMAIL', default='')
 
 # REST Framework Configuration
 
@@ -186,10 +186,10 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.JSONParser',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'project_name.api.v1.auth.TokenAuthenticate',
+        'project_name.api.auth.TokenAuthenticate',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'project_name.api.v1.auth.IsUserAuthenticated',
+        'project_name.api.auth.IsUserAuthenticated',
     ),
     'NON_FIELD_ERRORS_KEY': '__all__',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
