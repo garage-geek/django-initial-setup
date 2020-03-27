@@ -1,3 +1,7 @@
+# Como usar
+
+curl -L http://bit.ly/django-initial-setup | bash -s <project_name>
+
 # <README.md>
 
 ## Como desenvolver?
