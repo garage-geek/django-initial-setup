@@ -118,19 +118,23 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
-# https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'pt-br'
+LANGUAGE_CODE = config('LANGUAGE_CODE', default='pt-BR')
 
-TIME_ZONE = 'America/Sao_Paulo'
+TIME_ZONE = config('TIME_ZONE', default='America/Sao_Paulo')
 
-USE_I18N = True
+USE_I18N = config('USE_I18N', default=True)
 
-USE_L10N = True
+USE_L10N = config('USE_L10N', default=True)
 
-USE_TZ = True
+USE_TZ = config('USE_TZ', default=False)
+
+USE_THOUSAND_SEPARATOR = config('USE_THOUSAND_SEPARATOR', default=True)
+
+DECIMAL_SEPARATOR = config('DECIMAL_SEPARATOR', default=',')
+
+THOUSAND_SEPARATOR = config('THOUSAND_SEPARATOR', default='.')
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
@@ -141,21 +145,29 @@ LANGUAGES = [
 ]
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 AWS_QUERYSTRING_AUTH = True
+
 AWS_DEFAULT_ACL = 'private'
+
 AWS_BUCKET_ACL = 'private'
+
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default='')
+
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default='')
+
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', default='')
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_ROOT = config('STATIC_ROOT', default=os.path.join(BASE_DIR, 'staticfiles'))
+
 STATIC_AWS_BUCKET = config('STATIC_AWS_BUCKET', default='')
+
 STATICFILES_STORAGE = config('STATICFILES_STORAGE', default='django.contrib.staticfiles.storage.StaticFilesStorage')
 
 MEDIA_URL = config('MEDIA_URL', default='/media/')
+
 MEDIA_AWS_BUCKET = config('MEDIA_AWS_BUCKET', default='')
 
 DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE', default='django.core.files.storage.FileSystemStorage')
@@ -166,12 +178,19 @@ if DEFAULT_FILE_STORAGE == 'django.core.files.storage.FileSystemStorage':
 # Email configuration
 
 EMAIL_BACKEND = config('EMAIL_BACKEND', default='')
+
 EMAIL_HOST = config('EMAIL_HOST', default='')
+
 EMAIL_PORT = config('EMAIL_PORT', cast=int, default=25)
+
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool, default='')
+
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='')
+
 SERVER_EMAIL = config('SERVER_EMAIL', default='')
 
 # REST Framework Configuration
